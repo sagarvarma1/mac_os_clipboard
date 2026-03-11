@@ -39,3 +39,20 @@ Clipboard history is stored under your Application Support directory in a `Clipb
 ## Launch At Login
 
 The toggle is in app Settings. macOS may require a signed app bundle in `/Applications` for login-item registration to succeed.
+
+## Xcode App Project (Signed .app)
+
+This repo now includes [ClipboardApp.xcodeproj](/Users/sagarvarma/Desktop/clipboard/ClipboardApp.xcodeproj).
+
+1. Open `ClipboardApp.xcodeproj` in Xcode.
+2. Select target `ClipboardApp` -> `Signing & Capabilities`.
+3. Enable `Automatically manage signing`.
+4. Choose your Apple team and keep/update the bundle identifier.
+5. Run from Xcode once, then move the built `ClipboardApp.app` to `/Applications`.
+6. Turn on `Launch at login` in app Settings.
+
+Optional command-line validation build (no signing):
+
+```bash
+xcodebuild -project ClipboardApp.xcodeproj -scheme ClipboardApp -derivedDataPath .xcodebuild CODE_SIGNING_ALLOWED=NO build
+```
