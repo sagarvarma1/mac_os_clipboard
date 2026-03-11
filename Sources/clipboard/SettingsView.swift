@@ -3,6 +3,13 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject private var appState: AppState
 
+    private var launchAtLoginBinding: Binding<Bool> {
+        Binding(
+            get: { appState.launchAtLoginEnabled },
+            set: { appState.setLaunchAtLoginEnabled($0) }
+        )
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Clipboard Manager")
@@ -13,6 +20,14 @@ struct SettingsView: View {
             Text("Current items: \(appState.store.items.count)")
                 .font(.subheadline)
 
+            Toggle("Launch at login", isOn: launchAtLoginBinding)
+
+            if let note = appState.launchAtLoginNote {
+                Text(note)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
             HStack {
                 Spacer()
                 Button("Clear History", role: .destructive) {
@@ -22,5 +37,8 @@ struct SettingsView: View {
             }
         }
         .padding(16)
+        .onAppear {
+            appState.refreshLaunchAtLoginState()
+        }
     }
 }

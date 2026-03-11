@@ -9,6 +9,7 @@ Standalone SwiftUI macOS app that is menu bar-driven and also has a full window.
 - Persists history to disk.
 - Stores up to the most recent 100 entries.
 - Restores any history item back to the clipboard.
+- Includes a launch-at-login toggle in Settings.
 
 ## Project Layout
 
@@ -34,3 +35,7 @@ HOME=/Users/sagarvarma/Desktop/clipboard CLANG_MODULE_CACHE_PATH=/Users/sagarvar
 ```
 
 Clipboard history is stored under your Application Support directory in a `ClipboardManager`-style folder (bundle-id based when available).
+
+## Launch At Login
+
+The toggle is in app Settings. macOS may require a signed app bundle in `/Applications` for login-item registration to succeed.

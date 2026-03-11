@@ -5,14 +5,22 @@ import Foundation
 @MainActor
 final class AppState: ObservableObject {
     @Published var searchText = ""
+    @Published private(set) var launchAtLoginEnabled = false
+    @Published var launchAtLoginNote: String?
 
     let store: HistoryStore
     private let watcher: ClipboardWatcher
+    private let launchAtLoginService: LaunchAtLoginService
     private var cancellables = Set<AnyCancellable>()
 
-    init(store: HistoryStore = HistoryStore(), watcher: ClipboardWatcher = ClipboardWatcher()) {
+    init(
+        store: HistoryStore = HistoryStore(),
+        watcher: ClipboardWatcher = ClipboardWatcher(),
+        launchAtLoginService: LaunchAtLoginService = LaunchAtLoginService()
+    ) {
         self.store = store
         self.watcher = watcher
+        self.launchAtLoginService = launchAtLoginService
 
         store.objectWillChange
             .sink { [weak self] _ in
@@ -24,6 +32,7 @@ final class AppState: ObservableObject {
             self?.handleCapture(capture)
         }
         self.watcher.start()
+        refreshLaunchAtLoginState()
     }
 
     var filteredItems: [ClipboardItem] {
@@ -63,6 +72,20 @@ final class AppState: ObservableObject {
 
     func image(for item: ClipboardItem) -> NSImage? {
         store.image(for: item)
+    }
+
+    func refreshLaunchAtLoginState() {
+        launchAtLoginEnabled = launchAtLoginService.isEnabled
+        launchAtLoginNote = launchAtLoginService.userMessageForCurrentStatus()
+    }
+
+    func setLaunchAtLoginEnabled(_ enabled: Bool) {
+        do {
+            try launchAtLoginService.setEnabled(enabled)
+        } catch {
+            launchAtLoginNote = "Could not update login setting: \(error.localizedDescription)"
+        }
+        refreshLaunchAtLoginState()
     }
 
     private func handleCapture(_ capture: ClipboardCapture) {

@@ -24,7 +24,7 @@ struct ClipboardApp: App {
         Settings {
             SettingsView()
                 .environmentObject(appState)
-                .frame(width: 340, height: 180)
+                .frame(width: 360, height: 240)
         }
     }
 }
