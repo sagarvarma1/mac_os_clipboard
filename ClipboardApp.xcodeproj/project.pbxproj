@@ -18,8 +18,44 @@
 		A10000000000000000000028 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* MenuBarView.swift */; };
 		A10000000000000000000029 /* NSImage+PNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* NSImage+PNG.swift */; };
 		A1000000000000000000002A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* SettingsView.swift */; };
+		A1000000000000000000002C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001D /* AppConstants.swift */; };
 		B5884BB62F61EBE200C7A888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5884BB52F61EBE200C7A888 /* Assets.xcassets */; };
+		B60000000000000000000021 /* LoginItemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60000000000000000000011 /* LoginItemApp.swift */; };
+		B60000000000000000000022 /* LoginItemAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60000000000000000000012 /* LoginItemAppDelegate.swift */; };
+		B60000000000000000000023 /* LoginItemMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60000000000000000000013 /* LoginItemMenuBarView.swift */; };
+		B60000000000000000000024 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000011 /* AppState.swift */; };
+		B60000000000000000000025 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001D /* AppConstants.swift */; };
+		B60000000000000000000026 /* ClipboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* ClipboardItem.swift */; };
+		B60000000000000000000027 /* ClipboardWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* ClipboardWatcher.swift */; };
+		B60000000000000000000028 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000015 /* HistoryStore.swift */; };
+		B60000000000000000000029 /* LaunchAtLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* LaunchAtLoginService.swift */; };
+		B6000000000000000000002A /* NSImage+PNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* NSImage+PNG.swift */; };
+		C10000000000000000000004 /* ClipboardLoginItem.app in Embed Login Item */ = {isa = PBXBuildFile; fileRef = B60000000000000000000006 /* ClipboardLoginItem.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C10000000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B60000000000000000000007;
+			remoteInfo = ClipboardLoginItem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C10000000000000000000001 /* Embed Login Item */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				C10000000000000000000004 /* ClipboardLoginItem.app in Embed Login Item */,
+			);
+			name = "Embed Login Item";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A10000000000000000000006 /* ClipboardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,11 +71,24 @@
 		A1000000000000000000001A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1000000000000000000001B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000000000000000000001C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1000000000000000000001D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B5884BB52F61EBE200C7A888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B60000000000000000000006 /* ClipboardLoginItem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardLoginItem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60000000000000000000011 /* LoginItemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemApp.swift; sourceTree = "<group>"; };
+		B60000000000000000000012 /* LoginItemAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemAppDelegate.swift; sourceTree = "<group>"; };
+		B60000000000000000000013 /* LoginItemMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemMenuBarView.swift; sourceTree = "<group>"; };
+		B6000000000000000000001B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A1000000000000000000000B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6000000000000000000000B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -54,7 +103,9 @@
 			children = (
 				B5884BB52F61EBE200C7A888 /* Assets.xcassets */,
 				A10000000000000000000004 /* Sources/clipboard */,
+				B60000000000000000000004 /* Sources/loginitem */,
 				A10000000000000000000005 /* ClipboardApp */,
+				B60000000000000000000005 /* ClipboardLoginItem */,
 				A10000000000000000000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000006 /* ClipboardApp.app */,
+				B60000000000000000000006 /* ClipboardLoginItem.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +124,7 @@
 			children = (
 				A1000000000000000000001C /* AppDelegate.swift */,
 				A10000000000000000000011 /* AppState.swift */,
+				A1000000000000000000001D /* AppConstants.swift */,
 				A10000000000000000000012 /* ClipboardApp.swift */,
 				A10000000000000000000013 /* ClipboardItem.swift */,
 				A10000000000000000000014 /* ClipboardWatcher.swift */,
@@ -93,6 +146,24 @@
 			path = ClipboardApp;
 			sourceTree = SOURCE_ROOT;
 		};
+		B60000000000000000000004 /* Sources/loginitem */ = {
+			isa = PBXGroup;
+			children = (
+				B60000000000000000000011 /* LoginItemApp.swift */,
+				B60000000000000000000012 /* LoginItemAppDelegate.swift */,
+				B60000000000000000000013 /* LoginItemMenuBarView.swift */,
+			);
+			path = Sources/loginitem;
+			sourceTree = SOURCE_ROOT;
+		};
+		B60000000000000000000005 /* ClipboardLoginItem */ = {
+			isa = PBXGroup;
+			children = (
+				B6000000000000000000001B /* Info.plist */,
+			);
+			path = ClipboardLoginItem;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,14 +174,33 @@
 				A1000000000000000000000A /* Sources */,
 				A1000000000000000000000B /* Frameworks */,
 				A1000000000000000000000C /* Resources */,
+				C10000000000000000000001 /* Embed Login Item */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C10000000000000000000003 /* PBXTargetDependency */,
+			);
+			name = ClipboardApp;
+			productName = ClipboardApp;
+			productReference = A10000000000000000000006 /* ClipboardApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B60000000000000000000007 /* ClipboardLoginItem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B60000000000000000000009 /* Build configuration list for PBXNativeTarget "ClipboardLoginItem" */;
+			buildPhases = (
+				B6000000000000000000000A /* Sources */,
+				B6000000000000000000000B /* Frameworks */,
+				B6000000000000000000000C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ClipboardApp;
-			productName = ClipboardApp;
-			productReference = A10000000000000000000006 /* ClipboardApp.app */;
+			name = ClipboardLoginItem;
+			productName = ClipboardLoginItem;
+			productReference = B60000000000000000000006 /* ClipboardLoginItem.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -124,6 +214,9 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					A10000000000000000000007 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					B60000000000000000000007 = {
 						CreatedOnToolsVersion = 26.3;
 					};
 				};
@@ -142,6 +235,7 @@
 			projectRoot = "";
 			targets = (
 				A10000000000000000000007 /* ClipboardApp */,
+				B60000000000000000000007 /* ClipboardLoginItem */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +249,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6000000000000000000000C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -164,6 +265,7 @@
 			files = (
 				A1000000000000000000002B /* AppDelegate.swift in Sources */,
 				A10000000000000000000021 /* AppState.swift in Sources */,
+				A1000000000000000000002C /* AppConstants.swift in Sources */,
 				A10000000000000000000022 /* ClipboardApp.swift in Sources */,
 				A10000000000000000000023 /* ClipboardItem.swift in Sources */,
 				A10000000000000000000024 /* ClipboardWatcher.swift in Sources */,
@@ -176,7 +278,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6000000000000000000000A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B60000000000000000000021 /* LoginItemApp.swift in Sources */,
+				B60000000000000000000022 /* LoginItemAppDelegate.swift in Sources */,
+				B60000000000000000000023 /* LoginItemMenuBarView.swift in Sources */,
+				B60000000000000000000024 /* AppState.swift in Sources */,
+				B60000000000000000000025 /* AppConstants.swift in Sources */,
+				B60000000000000000000026 /* ClipboardItem.swift in Sources */,
+				B60000000000000000000027 /* ClipboardWatcher.swift in Sources */,
+				B60000000000000000000028 /* HistoryStore.swift in Sources */,
+				B60000000000000000000029 /* LaunchAtLoginService.swift in Sources */,
+				B6000000000000000000002A /* NSImage+PNG.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C10000000000000000000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B60000000000000000000007 /* ClipboardLoginItem */;
+			targetProxy = C10000000000000000000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A1000000000000000000000D /* Debug */ = {
@@ -255,6 +382,64 @@
 			};
 			name = Release;
 		};
+		B6000000000000000000000F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N6AJ489VRP;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ClipboardLoginItem/Info.plist;
+				INFOPLIST_KEY_LSBackgroundOnly = NO;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sagarvarma.clipboard.loginitem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		B60000000000000000000010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N6AJ489VRP;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ClipboardLoginItem/Info.plist;
+				INFOPLIST_KEY_LSBackgroundOnly = NO;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sagarvarma.clipboard.loginitem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -272,6 +457,15 @@
 			buildConfigurations = (
 				A1000000000000000000000F /* Debug */,
 				A10000000000000000000010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B60000000000000000000009 /* Build configuration list for PBXNativeTarget "ClipboardLoginItem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6000000000000000000000F /* Debug */,
+				B60000000000000000000010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

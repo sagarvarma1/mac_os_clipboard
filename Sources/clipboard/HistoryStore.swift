@@ -23,7 +23,7 @@ final class HistoryStore: ObservableObject {
         } else {
             let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
                 ?? URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-            let containerName = Bundle.main.bundleIdentifier ?? "ClipboardManager"
+            let containerName = AppIdentifiers.sharedHistoryFolder
             self.rootDirectoryURL = appSupport.appendingPathComponent(containerName, isDirectory: true)
         }
 

@@ -2,7 +2,7 @@ import Foundation
 import ServiceManagement
 
 struct LaunchAtLoginService {
-    private let service = SMAppService.mainApp
+    private let service = SMAppService.loginItem(identifier: AppIdentifiers.loginItem)
 
     var isEnabled: Bool {
         service.status == .enabled
@@ -24,11 +24,11 @@ struct LaunchAtLoginService {
 
     func userMessageForCurrentStatus() -> String? {
         if service.status == .requiresApproval {
-            return "Enable this app in System Settings > General > Login Items."
+            return "Enable ClipboardLoginItem in System Settings > General > Login Items."
         }
         if service.status == .enabled || service.status == .notRegistered {
             return nil
         }
-        return "Launch at login may require a signed app in /Applications."
+        return "Launch at login requires the signed ClipboardApp.app in /Applications."
     }
 }
